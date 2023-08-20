@@ -239,11 +239,11 @@
                         <div id="selected-item" class="selected-item"></div>
                         <hr>
                         <p class=" text-2xl font-medium pb-2">Total Price : <span id="Total Price"></span></p>
-                        <p class=" text-2xl font-medium pb-2">Discount :</p>
-                        <p class=" text-2xl font-medium pb-2"> Total :</p>
+                        <p class=" text-2xl font-medium pb-2">Discount : <span id="Discount price"></span></p>
+                        <p class=" text-2xl font-medium pb-2"> Total : <span id="total"></span></p>
                         <hr>
                         <div class="mt-6">
-                            <button id="btn-disable" class="btn bg-[#E527B2] normal-case font-semibold text-xl w-full  text-white hover:text-black" onclick="my_modal_5.showModal()" disabled>Make
+                            <button id="btn-purchase" class="btn bg-[#E527B2] normal-case font-semibold text-xl w-full  text-white hover:text-black" onclick="my_modal_5.showModal(); updateButtonState()" disabled>Make
                                 Purchase</button>
                                 <!-- Open the modal using ID.showModal() method -->
                                 <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
@@ -253,7 +253,7 @@
                                         <p class="py-4">Your Purchase the product</p>
                                         <div class="modal-action justify-center">
                                             <!-- if there is a button in form, it will close the modal -->
-                                            <button class="btn bg-[#E527B2] font-semibold text-xl normal-case text-white hover:text-black">Go Home</button>
+                                            <button class="btn bg-[#E527B2] font-semibold text-xl normal-case text-white hover:text-black" onclick="resetPurchaseForm()">Go Home</button>
                                         </div>
                                     </form>
                                 </dialog>
