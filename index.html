@@ -43,7 +43,7 @@
                     <h2 class="text-4xl text-center lg:text-left font-semibold">Kitchenware</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 text-center ">
                         <!-- card -1 -->
-                        <div class="card w-96 bg-base-100 shadow-xl">
+                        <div onclick="addToCart(this)" class="card w-96 bg-base-100 shadow-xl">
                             <figure class="px-10 p-10  bg-gray-200 w-[90%] mx-auto mt-5 rounded-xl ">
                                 <img src="/images/prod1.png" alt="Kitchen Product-1" class="rounded-xl" />
                             </figure>
@@ -62,7 +62,7 @@
                             </div>
                         </div>
                         <!-- card -2 -->
-                        <div class="card bg-base-100 shadow-xl">
+                        <div onclick="addToCart(this)" class="card bg-base-100 shadow-xl">
                             <figure class="px-10 p-10  bg-gray-200 w-[90%] mx-auto mt-5 rounded-xl ">
                                 <img src="/images/prod2.png" alt="Kitchen Product-2" class="rounded-xl" />
                             </figure>
@@ -81,7 +81,7 @@
                             </div>
                         </div>
                         <!-- card -3 -->
-                        <div class="card bg-base-100 shadow-xl">
+                        <div onclick="addToCart(this)" class="card bg-base-100 shadow-xl">
                             <figure class="px-10 p-10  bg-gray-200 w-[90%] mx-auto mt-5 rounded-xl ">
                                 <img src="/images/prod3.png" alt="Kitchen Product-3" class="rounded-xl" />
                             </figure>
@@ -105,7 +105,7 @@
                     <h2 class="text-4xl text-center lg:text-left font-semibold">Sportswear</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 text-center">
                         <!-- card -1 -->
-                        <div class="card bg-base-100 shadow-xl">
+                        <div onclick="addToCart(this)" class="card bg-base-100 shadow-xl">
                             <figure class="px-10 p-10  bg-gray-200 w-[90%] mx-auto mt-5 rounded-xl ">
                                 <img src="/images/prod4.png" alt="Sports Product-1" class="rounded-xl" />
                             </figure>
@@ -123,7 +123,7 @@
                             </div>
                         </div>
                         <!-- card -2 -->
-                        <div class="card bg-base-100 shadow-xl">
+                        <div onclick="addToCart(this)" class="card bg-base-100 shadow-xl">
                             <figure class="px-10 p-10  bg-gray-200 w-[90%] mx-auto mt-5 rounded-xl ">
                                 <img src="/images/prod5.png" alt="Sports Product-2" class="rounded-xl" />
                             </figure>
@@ -141,7 +141,7 @@
                             </div>
                         </div>
                         <!-- card -3 -->
-                        <div class="card bg-base-100 shadow-xl">
+                        <div onclick="addToCart(this)" class="card bg-base-100 shadow-xl">
                             <figure class="px-10 p-10  bg-gray-200 w-[90%] mx-auto mt-5 rounded-xl ">
                                 <img src="/images/prod6.png" alt="Sports Product-3" class="rounded-xl" />
                             </figure>
@@ -165,7 +165,7 @@
                         <h2 class="text-4xl text-center lg:text-left font-semibold ">Furniture</h2>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 text-center">
                             <!-- card -1 -->
-                            <div class="card bg-base-100 shadow-xl">
+                            <div onclick="addToCart(this)" class="card bg-base-100 shadow-xl">
                                 <figure class="px-10 p-10  bg-gray-200 w-[90%] mx-auto mt-5 rounded-xl ">
                                     <img src="/images/prod7.png" alt="Furniture Product-1" class="rounded-xl" />
                                 </figure>
@@ -183,7 +183,7 @@
                                 </div>
                             </div>
                             <!-- card -2 -->
-                            <div class="card bg-base-100 shadow-xl">
+                            <div onclick="addToCart(this)" class="card bg-base-100 shadow-xl">
                                 <figure class="px-10 p-10  bg-gray-200 w-[90%] mx-auto mt-5 rounded-xl ">
                                     <img src="/images/prod8.png" alt="Furniture Product-2" class="rounded-xl" />
                                 </figure>
@@ -201,7 +201,7 @@
                                 </div>
                             </div>
                             <!-- card -3 -->
-                            <div class="card bg-base-100 shadow-xl">
+                            <div onclick="addToCart(this)" class="card bg-base-100 shadow-xl">
                                 <figure class="px-10 p-10  bg-gray-200 w-[90%] mx-auto mt-5 rounded-xl ">
                                     <img src="/images/prod9.png" alt="Furniture Product-3" class="rounded-xl" />
                                 </figure>
@@ -227,22 +227,23 @@
                     <div class="card-body">
                         <h2 class="card-title">Have coupon?</h2>
                         <div class="flex gap-3">
-                            <input type="text" placeholder="Coupon code" class="input input-secondary " />
-                            <button
-                                class="btn bg-[#E527B2] font-semibold text-xl normal-case text-white hover:text-black">Apply</button>
+                            <input id="btn-confirm" type="text" placeholder="Coupon code" class="input input-secondary " />
+                            <button id="btn-disable"
+                                class="btn bg-[#E527B2] font-semibold text-xl normal-case text-white hover:text-black" disabled>Apply</button>
                         </div>
                     </div>
                 </div>
                 <!-- calculate Part -->
                 <div class="card bg-base-100 shadow-xl mt-6 lg:mx-auto md:mx-40">
                     <div class="card-body">
+                        <div id="selected-item" class="selected-item"></div>
                         <hr>
-                        <p class=" text-2xl font-medium pb-2">Total Price :</p>
+                        <p class=" text-2xl font-medium pb-2">Total Price : <span id="Total Price"></span></p>
                         <p class=" text-2xl font-medium pb-2">Discount :</p>
                         <p class=" text-2xl font-medium pb-2"> Total :</p>
                         <hr>
                         <div class="mt-6">
-                            <button class="btn bg-[#E527B2] normal-case font-semibold text-xl w-full  text-white hover:text-black" onclick="my_modal_5.showModal()">Make
+                            <button id="btn-disable" class="btn bg-[#E527B2] normal-case font-semibold text-xl w-full  text-white hover:text-black" onclick="my_modal_5.showModal()" disabled>Make
                                 Purchase</button>
                                 <!-- Open the modal using ID.showModal() method -->
                                 <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
